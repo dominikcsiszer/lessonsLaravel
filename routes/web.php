@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,16 @@ Route::get('/subjects/new', [SubjectController::class, 'newView']);
 Route::get('/subjects/list', [SubjectController::class, 'listView']);
 Route::get('/subjects/edit/{id}', [SubjectController::class, 'editView']);
 Route::get('/subjects/show/{id}', [SubjectController::class, 'showView']);
+
+// Users
+Route::get('/api/users', [UserController::class, 'index']);
+Route::get('/api/users/{id}', [UserController::class, 'show']);
+Route::post('/api/users', [UserController::class, 'store']);
+Route::put('/api/users/{id}', [UserController::class, 'update']);
+Route::delete('/api/users/delete/{id}', [UserController::class, 'destroy']);
+
+// Users View
+Route::get('/users/new', [UserController::class, 'newView']);
+Route::get('/users/list', [UserController::class, 'listView']);
+Route::get('/users/edit/{id}', [UserController::class, 'editView']);
+Route::get('/users/show/{id}', [UserController::class, 'showView']);
