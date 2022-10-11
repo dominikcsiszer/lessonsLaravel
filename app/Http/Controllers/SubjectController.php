@@ -20,21 +20,25 @@ class SubjectController extends Controller
     public function update(Request $request, $id)
     {
         $subject = Subject::find($id);
-        $subject->name = $request->title;
+        $subject->name = $request->name;
         $subject->description = $request->description;
         $subject->limit = $request->limit;
         $subject->save();
+
+        return redirect('/subjects/list');
     }
     public function store(Request $request) {
         $subject = new Subject();
-        $subject->name = $request->title;
+        $subject->name = $request->name;
         $subject->description = $request->description;
         $subject->limit = $request->limit;
         $subject->save();
+
+        return redirect('/subjects/list');
     }
     public function destroy($id) {
         Subject::find($id)->delete();
-        return redirect('/subject/list');
+        return redirect('/subjects/list');
     }
 
     //View
@@ -48,5 +52,9 @@ class SubjectController extends Controller
     public function editView($id) {
         $subject = Subject::find($id);
         return view('subject.edit', ['subject' => $subject]);
+    }
+    public function showView($id) {
+        $subject = Subject::find($id);
+        return view('subject.show', ['subject' => $subject]);
     }
 }

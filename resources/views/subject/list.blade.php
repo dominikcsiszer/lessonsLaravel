@@ -16,7 +16,7 @@
         <div class="col-6"><h1>Órák</h1></div>
         <div class="col-6 d-flex justify-content-end align-items-center"><a href="/subjects/new" class="btn btn-primary"><i class="bi bi-plus"></i> Új óra</a></div>
     </div>
-        <table class="table table-stripped">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -29,13 +29,18 @@
             <tbody>
                 @foreach ($subjects as $subject)
                     <tr>
-                        <th scope="row">{{$subject->subject_id}}</th>
+                        <th scope="row">{{$subject->id}}</th>
                         <td>{{$subject->name}}</td>
                         <td>{{$subject->description}}</td>
                         <td>{{$subject->limit}}</td>
-                            <td class="text-end"><a href="#" class="btn btn-light"><i class="bi bi-eye"></i> Megtekint</a>
-                            <a href="/subjects/edit/{{$subject->subject_id}}" class="btn btn-light"><i class="bi bi-pencil"></i> Szerkesztés</a>
-                            <a href="/api/subjects/delete/{{$subject->subject_id}}" class="btn btn-danger"><i class="bi bi-trash"></i> Törlés</a></td>
+                            <td class="d-flex justify-content-end">
+                                <a href="/subjects/show/{{$subject->id}}" class="btn btn-light"><i class="bi bi-eye"></i> Megtekint</a>
+                                <a href="/subjects/edit/{{$subject->id}}" class="btn btn-light"><i class="bi bi-pencil"></i> Szerkesztés</a>
+                                <form action="/api/subjects/delete/{{$subject->id}}" method="DELETE">
+                                    {{csrf_field()}}
+                                    {{method_field('delete')}}
+                                    <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Törlés</button>
+                                </form>
                         </div>
                     </tr>
                 @endforeach

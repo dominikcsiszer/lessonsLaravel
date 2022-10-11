@@ -12,7 +12,29 @@
 </head>
 <body>
     <div class="container">
-        <h1>Hello</h1>
+            <div class="row">
+                <div class="col-6"><h1>{{$subject->name}} szerkesztése</h1></div>
+                <div class="col-6 d-flex justify-content-end align-items-center"><a href="/subjects/list" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Vissza</a></div>
+            </div>
+                
+                <form action="/api/subjects/{{$subject->id}}" method="post">
+                    {{csrf_field()}}
+                    {{method_field('PUT')}}
+                    <div class="form-floating mb-3">
+                        <input type="text" value="{{$subject->name}}" class="form-control" name="name" id="name" placeholder="Neve">
+                        <label for="name">Neve</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" value="{{$subject->description}}"  class="form-control" name="description" id="description" placeholder="Leírás">
+                        <label for="description">Leírása</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="number" value="{{$subject->limit}}"  class="form-control" name="limit" id="limit" placeholder="Limit">
+                        <label for="limit">Limit</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Szerkesztés</button>
+                </form>
+            </div>
     </div>
 </body>
 </html>

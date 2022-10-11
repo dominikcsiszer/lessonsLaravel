@@ -20,12 +20,13 @@ Route::get('/', function () {
 
 // Subjects
 Route::get('/api/subjects', [SubjectController::class, 'index']);
-Route::get('/api/subjects/:id', [SubjectController::class, 'show']);
+Route::get('/api/subjects/{id}', [SubjectController::class, 'show']);
 Route::post('/api/subjects', [SubjectController::class, 'store']);
-Route::put('/api/subjects/:id', [SubjectController::class, 'update']);
-Route::delete('/api/subjects/delete/:id', [SubjectController::class, 'destroy']);
+Route::put('/api/subjects/{id}', [SubjectController::class, 'update']);
+Route::delete('/api/subjects/delete/{id}', [SubjectController::class, 'destroy']);
 
 // Subject View
 Route::get('/subjects/new', [SubjectController::class, 'newView']);
 Route::get('/subjects/list', [SubjectController::class, 'listView']);
-Route::get('/subjects/edit/:id', [SubjectController::class, 'editView']);
+Route::get('/subjects/edit/{id}', [SubjectController::class, 'editView']);
+Route::get('/subjects/show/{id}', [SubjectController::class, 'showView']);

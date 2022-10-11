@@ -18,19 +18,21 @@
     </div>
         
         <form action="/api/subjects" method="post">
-            <div class="mb-3">
-                <label for="name" class="form-label">Neve</label>
-                <input type="text" class="form-control" id="name">
+            {{csrf_field()}}
+            {{method_field('POST')}}
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Neve">
+                <label for="name">Neve</label>
             </div>
-            <div class="mb-3">
-                <label for="description" class="form-label">Leírása</label>
-                <input type="text"  class="form-control" name="description">
+            <div class="form-floating mb-3">
+                <input type="text"  class="form-control" name="description" id="description" placeholder="Leírás">
+                <label for="description">Leírása</label>
             </div>
-            <div class="mb-3">
-                <label for="limit" class="form-label">Limit</label>
-                <input type="number"  class="form-control" name="limit">
+            <div class="form-floating mb-3">
+                <input type="number"  class="form-control" name="limit" id="limit" placeholder="Limit">
+                <label for="limit">Limit</label>
             </div>
-            <button type="submit" class="btn btn-primary">Hozzáadás</button>
+            <button type="submit" class="btn btn-primary"><i class="bi bi-plus"></i> Hozzáadás</button>
         </form>
     </div>
 </body>
