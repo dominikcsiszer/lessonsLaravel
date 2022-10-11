@@ -11,10 +11,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
 <body>
+@include('shared.nav')
     <div class="container">
+    <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/subjects/list">Órák</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Megtekintés</li>
+                </ol>
+            </nav>
         <div class="row">
-            <div class="col-6"><h1>Órák</h1></div>
-            <div class="col-6 d-flex justify-content-end align-items-center"><a href="/subjects/list" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Vissza</a></div>
+            <div class="col-6"><h1>{{$subject->name}} Óra</h1></div>
         </div>
         <div class="card">
         <div class="card-body">

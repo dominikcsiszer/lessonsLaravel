@@ -11,10 +11,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
 <body>
+@include('shared.nav')
     <div class="container">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/users/list">Főoldal</a></li>
+            <li class="breadcrumb-item"><a href="/users/list">Felhasználók</a></li>
             <li class="breadcrumb-item active" aria-current="page">Megtekintés</li>
         </ol>
     </nav>

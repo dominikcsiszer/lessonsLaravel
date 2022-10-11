@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
 <body>
+@include('shared.nav')
     <div class="container">
     <div class="row">
         <div class="col-6"><h1>Órák</h1></div>
