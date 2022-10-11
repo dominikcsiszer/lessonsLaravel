@@ -14,10 +14,13 @@ class CreateLessonsTable extends Migration
     public function up()
     {
         Schema::create('lessons', function (Blueprint $table) {
-            $table->id('subjet_id');
-            $table->id('user_id');
-            $table->foreign('user_id')->references('subject_id')->on('users');
-            $table->foreign('subject')->references('users')->on('subjects');
+            $table->id();
+            $table->bigInteger('subject_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
+            $table->date('achive');
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('subject_id')->references('id')->on('subjects');
             $table->timestamps();
         });
     }
