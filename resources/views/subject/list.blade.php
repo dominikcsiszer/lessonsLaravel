@@ -14,8 +14,8 @@
 @include('shared.nav')
     <div class="container">
     <div class="row">
-        <div class="col-6"><h1>Órák</h1></div>
-        <div class="col-6 d-flex justify-content-end align-items-center"><a href="/subjects/new" class="btn btn-primary"><i class="bi bi-plus"></i> Új óra</a></div>
+        <div class="col-6"><h1>Tantárgyak</h1></div>
+        <div class="col-6 d-flex justify-content-end align-items-center"><a href="/subjects/new" class="btn btn-primary"><i class="bi bi-plus"></i> Új Tantárgy</a></div>
     </div>
         <table class="table table-striped">
             <thead>
@@ -37,7 +37,7 @@
                             <td class="d-flex justify-content-end">
                                 <a href="/subjects/show/{{$subject->id}}" class="btn btn-light"><i class="bi bi-eye"></i> Megtekint</a>
                                 <a href="/subjects/edit/{{$subject->id}}" class="btn btn-light"><i class="bi bi-pencil"></i> Szerkesztés</a>
-                                <form action="/api/subjects/delete/{{$subject->id}}" method="DELETE">
+                                <form action="/api/subjects/delete/{{$subject->id}}" method="POST">
                                     {{csrf_field()}}
                                     {{method_field('delete')}}
                                     <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Törlés</button>

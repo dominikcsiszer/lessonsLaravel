@@ -10,7 +10,7 @@
           <a class="nav-link" aria-current="page" href="/users/list">Felhasználók</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/subjects/list">Órák</a>
+          <a class="nav-link" href="/subjects/list">Tantárgyak</a>
         </li>
         </li>
       </ul>

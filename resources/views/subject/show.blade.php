@@ -15,12 +15,12 @@
     <div class="container">
     <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/subjects/list">Órák</a></li>
+                    <li class="breadcrumb-item"><a href="/subjects/list">Tantárgyak</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Megtekintés</li>
                 </ol>
             </nav>
         <div class="row">
-            <div class="col-6"><h1>{{$subject->name}} Óra</h1></div>
+            <div class="col-6"><h1>{{$subject->name}} tantárgyak</h1></div>
         </div>
         <div class="card">
         <div class="card-body">

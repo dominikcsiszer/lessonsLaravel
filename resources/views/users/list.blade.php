@@ -35,7 +35,7 @@
                             <td class="d-flex justify-content-end">
                                 <a href="/users/show/{{$user->id}}" class="btn btn-light"><i class="bi bi-eye"></i> Megtekint</a>
                                 <a href="/users/edit/{{$user->id}}" class="btn btn-light"><i class="bi bi-pencil"></i> Szerkesztés</a>
-                                <form action="/api/users/delete/{{$user->id}}" method="DELETE">
+                                <form action="/api/users/delete/{{$user->id}}" method="POST">
                                     {{csrf_field()}}
                                     {{method_field('delete')}}
                                     <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Törlés</button>
